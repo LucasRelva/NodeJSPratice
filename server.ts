@@ -4,7 +4,7 @@ import path = require('path')
 const server = express()
 
 server.get('/', (req, res) => {
-    res.sendfile(path.join(__dirname, '/views/index.html'))
+    res.sendFile(path.join(__dirname, '/views/mytransactions.html'))
 })
 
  const porta = (parseInt(process.env.PORT) || 8000)
