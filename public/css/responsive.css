@@ -1,0 +1,49 @@
+@media (max-width: 799px) {
+
+    .cards {
+
+        margin: auto;
+        width: 12rem;
+
+    }
+
+}
+
+@media (max-width: 660px) {
+
+    .cards{
+
+        width: 10rem;
+
+    }
+
+    .card-title {
+
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width: 565px) {
+
+    .cards {
+        
+        max-width: none;
+        width: 100%;
+
+    }
+
+    .results {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .card-title {
+
+        font-size: 20px;
+
+    }
+
+}

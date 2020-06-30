@@ -1,0 +1,28 @@
+
+table {
+
+    box-shadow: 5px 5px 0px 0px rgba(56, 56, 56, 0.315); 
+    border-radius: 5px; 
+    cursor: pointer;
+    border: 0;
+    
+}
+
+.results {
+
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.cards {
+
+    max-width: 18rem;
+    width: 15rem;
+    box-shadow: 5px 5px rgba(56, 56, 56, 0.315);
+    border: 0;
+
+}
