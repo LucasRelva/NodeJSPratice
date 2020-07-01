@@ -8,4 +8,8 @@ router.get('/', (req, res) => {
     res.render('mytransactions')
 })
 
+router.get('/NovaTransacao', (req, res) => {
+    res.render('newtransaction.ejs')
+})
+
 export = router

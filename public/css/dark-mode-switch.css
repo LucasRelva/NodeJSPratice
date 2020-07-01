@@ -1,56 +1,38 @@
 [data-theme="dark"] {
-
     background-color: #2b2e31 !important;
     color: #eee;
-
   }
   
   [data-theme="dark"] .bg-light {
-
     background-color: #333 !important;
-
   }
   
   [data-theme="dark"] .bg-white {
-
     background-color: #000 !important;
-
   }
   
   [data-theme="dark"] .bg-black {
-
     background-color: #eee !important;
-
   }
 
   [data-theme="dark"] .table {
-
     background-color: #5c5c5c !important;
     color: #FFF !important;
-
   }
 
   [data-theme="dark"] .border-success {
-
     background-color: #4CA746 !important;
-
   }
 
   [data-theme="dark"] .border-danger {
-
     background-color: #DC3545 !important;
-
   }
 
   [data-theme="dark"] .border-dark {
-
     background-color: #32383E !important;
-
   }
 
   [data-theme="dark"] .card-title {
-
     color: #ffff;
-    
   }
 
