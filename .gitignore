@@ -2,5 +2,8 @@ node_modules
 server.js
 conta.js
 home.js
+sql.js
+sqlPool.js
+appsettings.js
 *.js.map
 views/mytransactions.html
