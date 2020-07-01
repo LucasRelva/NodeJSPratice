@@ -1,7 +1,7 @@
 
 table {
 
-    box-shadow: 5px 5px 0px 0px rgba(56, 56, 56, 0.315); 
+    box-shadow: 5px 5px 0px 0px rgba(78, 78, 78, 0.151); 
     border-radius: 5px; 
     cursor: pointer;
     border: 0;
@@ -22,9 +22,17 @@ table {
 
 .cards {
 
+    margin-right: 8px;
     max-width: 18rem;
     width: 15rem;
-    box-shadow: 5px 5px rgba(56, 56, 56, 0.315);
-    border: 0;
+    box-shadow: 5px 5px rgba(78, 78, 78, 0.151);
+
+}
+
+.page-header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
