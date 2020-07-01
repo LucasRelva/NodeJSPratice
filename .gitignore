@@ -1,7 +1,6 @@
 node_modules
 server.js
-server.js.map
 conta.js
-conta.js.map
 home.js
-home.js.map
+*.js.map
+views/mytransactions.html
