@@ -5,6 +5,7 @@ table {
     border-radius: 5px; 
     cursor: pointer;
     border: 0;
+    overflow: hidden;
     
 }
 
@@ -15,6 +16,7 @@ table {
     justify-content: space-between;
     margin-top: 10px;
     text-align: center;
+    overflow: hidden;
 
 }
 
