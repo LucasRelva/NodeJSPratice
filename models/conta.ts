@@ -18,14 +18,15 @@ import Sql = require("../infra/sql");
      public name: string
      public type: string
      public value: number
+     public date: Date
 
-     public constructor (id:number, name:string, type:string, value:number){
+     public constructor (id:number, name:string, type:string, value:number, date: Date){
 
         this.id = id
         this.name = name
         this.type = type
         this.value = value
-        
+        this.date = date
      }
 
      private static validate(transaction: Transaction): string {
@@ -35,7 +36,7 @@ import Sql = require("../infra/sql");
         }
 
         if (transaction.type) {
-            transaction.type = transaction.name.trim()
+            transaction.type = transaction.type.trim()
         }
 
         if (!transaction.type || isNaN(transaction.value) || !transaction.name || !transaction.value){
@@ -60,8 +61,8 @@ import Sql = require("../infra/sql");
         await Sql.conectar(async (sql: Sql) => {
 
             try {
-                await sql.query(`INSERT INTO transactions (nome, tipo, valor)
-                 VALUES (?, ?, ?)`, [transaction.name, transaction.type, transaction.value])
+                await sql.query(`INSERT INTO transactions (nome, tipo, valor, dia)
+                 VALUES (?, ?, ?, CURDATE())`, [transaction.name, transaction.type, transaction.value])
 
                  transaction.id = await sql.scalar('SELECT last_insert_id()') as number
             } catch (e) {
@@ -82,7 +83,7 @@ import Sql = require("../infra/sql");
             await sql.query('DELETE FROM transactions WHERE id = ?' [id])
 
             if (!sql.linhasAfetadas) {
-                err = 'Trasação não encontrada'
+                err = 'Transação não encontrada'
             }
 
         })

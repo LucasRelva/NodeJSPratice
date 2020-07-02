@@ -29,6 +29,7 @@ server.use((req, res, next) => {
 })
 
 server.use('/', require('./routes/home'))
+server.use('/api/conta', require('./routes/api/conta'))
 
 const porta = (parseInt(process.env.PORT) || 8000)
 
