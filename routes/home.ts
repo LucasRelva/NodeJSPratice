@@ -1,6 +1,6 @@
 import express = require('express')
 import wrap = require('express-async-error-wrapper')
-import transaction = require('../models/conta')
+import Transaction = require('../models/conta')
 
 const router = express.Router()
 
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/NovaTransacao', (req, res) => {
-    res.render('newtransaction.ejs')
+    res.render('newtransaction')
 })
 
 export = router
