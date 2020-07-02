@@ -36,3 +36,10 @@
     color: #ffff;
   }
 
+  [data-theme="dark"] .bi-moon {
+    display: none;
+  }
+
+  [data-theme="dark"] .bi-sun {
+    display: inline;
+  }

@@ -23,7 +23,7 @@
 
     .cards {
         max-width: none;
-        width: 100%;
+        width: 60%;
     }
 
     .results {
@@ -49,6 +49,20 @@
 
     .btn{
         margin-right: 2vw;
+    }
+
+    .cards {
+        width: 80%;
+    }
+
+    .upper-table{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .upper-table h3{
+        font-size: 23px;
     }
 
 }

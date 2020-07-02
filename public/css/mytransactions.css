@@ -1,15 +1,18 @@
 
 table {
     box-shadow: 5px 5px 0px 0px rgba(78, 78, 78, 0.151); 
-    border-radius: 5px; 
+    border-radius: 0px 0px 5px 5px; 
     cursor: pointer;
     border: 0;
     overflow: hidden;
 }
 
+th {
+    background-color: grey;
+}
+
 .results {
     display: flex;
-    flex: 1;
     justify-content: space-between;
     margin-top: 10px;
     text-align: center;
@@ -31,4 +34,29 @@ table {
 
 .btn {
     margin-right: 13vw;
+    margin-left: 19px;
+}
+
+.switch-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bi {
+    margin-right: 5px;
+}
+
+.bi-sun {
+    display: none;
+}
+
+.bi-plus-circle{
+    font-size: 20px;
+    margin-left: 6px;
+}
+
+.upper-table{
+    display: flex;
+    margin-bottom: 10px;
 }
