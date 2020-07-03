@@ -15,6 +15,7 @@
     "express": "^4.16.4",
     "express-async-error-wrapper": "1.0.3",
     "express-ejs-layouts": "2.5.0",
+    "jquery-mask-plugin": "^1.14.16",
     "lru-cache": "4.1.3",
     "mysql": "^2.18.1",
     "uuid": "^8.2.0"
