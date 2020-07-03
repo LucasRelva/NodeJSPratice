@@ -7,5 +7,6 @@ CREATE TABLE transactions (
     tipo varchar(50) NOT NULL,
     valor float NOT NULL,
     dia DATE NOT NULL,
+    token varchar(100) NOT NULL,
     PRIMARY KEY (id)
 );

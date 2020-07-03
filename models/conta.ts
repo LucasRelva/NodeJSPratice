@@ -1,4 +1,5 @@
 import Sql = require("../infra/sql");
+import { v4 as uuidv4 } from 'uuid';
 
 //**********************************************************************************
 // Se por acaso ocorrer algum problema de conexão, autenticação com o MySQL,
@@ -14,19 +15,22 @@ import Sql = require("../infra/sql");
  
 
  export = class Transaction {
+
      public id: number
      public name: string
      public type: string
      public value: number
      public date: Date
+     public token: string
 
-     public constructor (id:number, name:string, type:string, value:number, date: Date){
+     public constructor (id:number, name:string, type:string, value:number, date: Date, token: string){
 
         this.id = id
         this.name = name
         this.type = type
         this.value = value
         this.date = date
+        this.token = token
      }
 
      private static validate(transaction: Transaction): string {
@@ -61,10 +65,13 @@ import Sql = require("../infra/sql");
         await Sql.conectar(async (sql: Sql) => {
 
             try {
-                await sql.query(`INSERT INTO transactions (nome, tipo, valor, dia)
-                 VALUES (?, ?, ?, CURDATE())`, [transaction.name, transaction.type, transaction.value])
+                transaction.id = await sql.scalar('SELECT last_insert_id()') as number
 
-                 transaction.id = await sql.scalar('SELECT last_insert_id()') as number
+                transaction.token = uuidv4(transaction.id)
+
+                await sql.query(`INSERT INTO transactions (nome, tipo, valor, dia, token) 
+                                VALUES (?, ?, ?, CURDATE() , ?)`, [transaction.name, transaction.type, transaction.value, transaction.token])
+                                
             } catch (e) {
                 throw e
             }
