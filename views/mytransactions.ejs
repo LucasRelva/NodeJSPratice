@@ -1,129 +1,103 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<div class="page-header" style="margin-top: 17px;">
+    <h1 class="page-header-text">Minha Conta</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="switch-area">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z" />
+        </svg>
 
-    <link rel="stylesheet" href="/css/mytransactions.css">
-    <link rel="stylesheet" href="/css/dark-mode-switch.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-sun" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 8a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z" />
+            <path fill-rule="evenodd"
+                d="M8.202.28a.25.25 0 0 0-.404 0l-.91 1.255a.25.25 0 0 1-.334.067L5.232.79a.25.25 0 0 0-.374.155l-.36 1.508a.25.25 0 0 1-.282.19l-1.532-.245a.25.25 0 0 0-.286.286l.244 1.532a.25.25 0 0 1-.189.282l-1.509.36a.25.25 0 0 0-.154.374l.812 1.322a.25.25 0 0 1-.067.333l-1.256.91a.25.25 0 0 0 0 .405l1.256.91a.25.25 0 0 1 .067.334L.79 10.768a.25.25 0 0 0 .154.374l1.51.36a.25.25 0 0 1 .188.282l-.244 1.532a.25.25 0 0 0 .286.286l1.532-.244a.25.25 0 0 1 .282.189l.36 1.508a.25.25 0 0 0 .374.155l1.322-.812a.25.25 0 0 1 .333.067l.91 1.256a.25.25 0 0 0 .405 0l.91-1.256a.25.25 0 0 1 .334-.067l1.322.812a.25.25 0 0 0 .374-.155l.36-1.508a.25.25 0 0 1 .282-.19l1.532.245a.25.25 0 0 0 .286-.286l-.244-1.532a.25.25 0 0 1 .189-.282l1.508-.36a.25.25 0 0 0 .155-.374l-.812-1.322a.25.25 0 0 1 .067-.333l1.256-.91a.25.25 0 0 0 0-.405l-1.256-.91a.25.25 0 0 1-.067-.334l.812-1.322a.25.25 0 0 0-.155-.374l-1.508-.36a.25.25 0 0 1-.19-.282l.245-1.532a.25.25 0 0 0-.286-.286l-1.532.244a.25.25 0 0 1-.282-.189l-.36-1.508a.25.25 0 0 0-.374-.155l-1.322.812a.25.25 0 0 1-.333-.067L8.203.28zM8 2.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" />
+        </svg>
+
+        <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="darkSwitch">
+            <label class="custom-control-label" for="darkSwitch"></label>
+        </div>
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="results">
+
+    <div class="card border-danger mb-3 cards">
+        <div class="card-header">Saída</div>
+        <div class="card-body text-danger">
+            <h5 class="card-title">- R$1000,00</h5>
+        </div>
+    </div>
+
+    <div class="card border-dark  mb-3 cards">
+        <div class="card-header">Saldo atual</div>
+        <div class="card-body">
+            <h5 class="card-title"> R$1000,00</h5>
+        </div>
+    </div>
+
+    <div class="card border-success  mb-3 cards">
+        <div class="card-header">Entrada</div>
+        <div class="card-body text-success">
+            <h5 class="card-title">+ R$1000,00</h5>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<div class="col-12">
+
+    <div class="upper-table">
+
+        <h3>Minhas transações</h3>
+
+        <a href="/NovaTransacao" class="btn btn-primary">
+            Nova Transação
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z" />
+                <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z" />
+                <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            </svg>
+        </a>
+    </div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody class="" id="table-body">
+            <tr>
+                <td>10</td>
+                <td>Lucas</td>
+                <td>saída</td>
+                <td class="text-danger">- R$550,00</td>
+                <td>12/03/2017</td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+    <%- contentFor('header-end') %>
 
     <title>Minha conta</title>
 
-</head>
-
-<body>
-    <div class="container-fluid">
-
-        <div class="page-header" style="margin-top: 17px;">
-            <h1 class="page-header-text">Minha Conta</h1>
-
-            <div class="switch-area">
-
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-moon" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z" />
-                </svg>
-
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-sun" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.5 8a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0z" />
-                    <path fill-rule="evenodd"
-                        d="M8.202.28a.25.25 0 0 0-.404 0l-.91 1.255a.25.25 0 0 1-.334.067L5.232.79a.25.25 0 0 0-.374.155l-.36 1.508a.25.25 0 0 1-.282.19l-1.532-.245a.25.25 0 0 0-.286.286l.244 1.532a.25.25 0 0 1-.189.282l-1.509.36a.25.25 0 0 0-.154.374l.812 1.322a.25.25 0 0 1-.067.333l-1.256.91a.25.25 0 0 0 0 .405l1.256.91a.25.25 0 0 1 .067.334L.79 10.768a.25.25 0 0 0 .154.374l1.51.36a.25.25 0 0 1 .188.282l-.244 1.532a.25.25 0 0 0 .286.286l1.532-.244a.25.25 0 0 1 .282.189l.36 1.508a.25.25 0 0 0 .374.155l1.322-.812a.25.25 0 0 1 .333.067l.91 1.256a.25.25 0 0 0 .405 0l.91-1.256a.25.25 0 0 1 .334-.067l1.322.812a.25.25 0 0 0 .374-.155l.36-1.508a.25.25 0 0 1 .282-.19l1.532.245a.25.25 0 0 0 .286-.286l-.244-1.532a.25.25 0 0 1 .189-.282l1.508-.36a.25.25 0 0 0 .155-.374l-.812-1.322a.25.25 0 0 1 .067-.333l1.256-.91a.25.25 0 0 0 0-.405l-1.256-.91a.25.25 0 0 1-.067-.334l.812-1.322a.25.25 0 0 0-.155-.374l-1.508-.36a.25.25 0 0 1-.19-.282l.245-1.532a.25.25 0 0 0-.286-.286l-1.532.244a.25.25 0 0 1-.282-.189l-.36-1.508a.25.25 0 0 0-.374-.155l-1.322.812a.25.25 0 0 1-.333-.067L8.203.28zM8 2.5a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" />
-                </svg>
-
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
-                    <label class="custom-control-label" for="darkSwitch"><i class="fa fa-moon-o"
-                            aria-hidden="true"></i></label>
-                </div>
-
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="results">
-
-            <div class="card border-danger mb-3 cards">
-                <div class="card-header">Saída</div>
-                <div class="card-body text-danger">
-                    <h5 class="card-title">- R$1000,00</h5>
-                </div>
-            </div>
-
-            <div class="card border-dark  mb-3 cards">
-                <div class="card-header">Saldo atual</div>
-                <div class="card-body">
-                    <h5 class="card-title"> R$1000,00</h5>
-                </div>
-            </div>
-
-            <div class="card border-success  mb-3 cards">
-                <div class="card-header">Entrada</div>
-                <div class="card-body text-success">
-                    <h5 class="card-title">+ R$1000,00</h5>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="col-12">
-
-        <div class="upper-table">
-
-            <h3>Minhas transações</h3>
-
-            <a href="/NovaTransacao" class="btn btn-primary">
-                Nova Transação
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                  </svg>
-                </a>
-        </div>
-
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody class="" id="table-body">
-                <tr>
-                    <td>10</td>
-                    <td>Lucas</td>
-                    <td>saída</td>
-                    <td class="text-danger">- R$550,00</td>
-                </tr>
-            </tbody>
-
-        </table>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-    <script src="/js/dark-mode-switch.min.js"></script>
-
-</body>
-
-</html>
+    <link rel="stylesheet" href="/css/mytransactions.css">

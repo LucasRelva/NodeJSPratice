@@ -66,3 +66,11 @@
     }
 
 }
+
+@media(max-width: 390px){
+
+    .table{
+        font-size: 14px;
+    }
+
+}

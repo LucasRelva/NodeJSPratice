@@ -1,1 +1,27 @@
-<%- body %> 
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   
+    <%- include('header') %>
+
+    <%- defineContent('header-end') %> 
+
+    <link rel="stylesheet" href="/css/responsive.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <%- body %>
+
+    </div>
+
+    <%- include('scripts') %> 
+
+    <%- defineContent('body-end') %> 
+    
+</body>
+
+</html>
