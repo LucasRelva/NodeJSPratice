@@ -43,3 +43,7 @@
   [data-theme="dark"] .bi-sun {
     display: inline;
   }
+
+  [data-theme="dark"] .modal-content{
+    background-color: #32383E;
+  }

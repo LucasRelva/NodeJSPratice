@@ -71,7 +71,7 @@ import { v4 as uuidv4 } from 'uuid';
 
                 await sql.query(`INSERT INTO transactions (nome, tipo, valor, dia, token) 
                                 VALUES (?, ?, ?, CURDATE() , ?)`, [transaction.name, transaction.type, transaction.value, transaction.token])
-                                
+
             } catch (e) {
                 throw e
             }
@@ -87,7 +87,7 @@ import { v4 as uuidv4 } from 'uuid';
 
         await Sql.conectar(async (sql: Sql) => {
 
-            await sql.query('DELETE FROM transactions WHERE id = ?' [id])
+            await sql.query('DELETE FROM transactions WHERE id = ?', [id])
 
             if (!sql.linhasAfetadas) {
                 err = 'Transação não encontrada'

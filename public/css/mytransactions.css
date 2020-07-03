@@ -32,7 +32,7 @@ th {
     align-items: center;
 }
 
-.btn {
+.upper-table .btn {
     margin-right: 13vw;
     margin-left: 19px;
 }
@@ -59,4 +59,78 @@ th {
 .upper-table{
     display: flex;
     margin-bottom: 10px;
+}
+
+.modal-body form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-group{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-group input{
+    background-color: #e2e2e2;
+    border: 1px solid grey;
+    padding: 16px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin: 14px;
+}
+
+.modal-group input:focus{
+    background-color: rgb(205, 237, 255);
+    border: 2px solid rgb(115, 192, 255);
+    cursor: pointer;
+}
+
+.modal-group input:hover{
+    cursor: pointer;
+}
+
+.form-group{
+    width: 50%;
+}
+
+.form-group select{
+    width: 100%;
+    background-color: #e2e2e2;
+}
+
+.form-group select:hover{
+    cursor: pointer;
+}
+
+.form-group select:focus{
+    background-color: #e2e2e2;
+    border: 2px solid rgb(115, 192, 255);
+    cursor: pointer;
+}
+
+.close{
+    text-decoration: none;
+    outline: none;
+    border: 0;
+    overflow: hidden;
+}
+
+.close::-moz-focus-inner{
+    border: none;
+    overflow: hidden;
+    outline: none;
+    text-decoration: none;
+}
+
+.close:focus{
+    border: none;
+    overflow: hidden;
+    outline: none;
+    text-decoration: none;
 }

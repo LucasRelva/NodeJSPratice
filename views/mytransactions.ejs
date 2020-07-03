@@ -60,7 +60,7 @@
 
         <h3>Minhas transações</h3>
 
-        <a href="/NovaTransacao" class="btn btn-primary">
+        <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Nova Transação
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-circle" fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg">
@@ -72,29 +72,67 @@
         </a>
     </div>
 
-<div class="table-responsive">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th>Valor</th>
-                <th>Data</th>
-            </tr>
-        </thead>
-        <tbody class="" id="table-body">
-            <tr>
-                <td>10</td>
-                <td>Lucas</td>
-                <td>saída</td>
-                <td class="text-danger">- R$550,00</td>
-                <td>12/03/2017</td>
-            </tr>
-        </tbody>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody class="" id="table-body">
+                <tr>
+                    <td>10</td>
+                    <td>Lucas</td>
+                    <td>saída</td>
+                    <td class="text-danger">- R$550,00</td>
+                    <td>12/03/2017</td>
+                </tr>
+            </tbody>
 
-    </table>
-</div>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastrar nova transação</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="modal-group">
+                            <div class="transaction-name">
+                                <input type="text" name="value" required="required" placeholder="Digite o nome">
+                            </div>
+                            <div class="transaction-value">
+                                <input type="number" name="name" required="required" placeholder="Digite o valor">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1"></label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Entrada</option>
+                                <option>Saída</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <%- contentFor('header-end') %>
 
