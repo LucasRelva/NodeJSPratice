@@ -19,6 +19,14 @@
 
 }
 
+@media (max-width: 573px){
+
+    .form-group.select-icon{
+        margin: auto;
+    }
+
+}
+
 @media (max-width: 565px) {
 
     .cards {
@@ -41,6 +49,20 @@
 
 }
 
+@media (max-width: 520px){
+
+    .upper-table{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .upper-table .btn{
+        margin: 0;
+    }
+
+}
+
 @media (max-width: 470px){
 
     .page-header-text{
@@ -53,12 +75,6 @@
 
     .cards {
         width: 80%;
-    }
-
-    .upper-table{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .upper-table h3{

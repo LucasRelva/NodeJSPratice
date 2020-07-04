@@ -71,18 +71,19 @@ th {
 .modal-group{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 4px;
     justify-content: center;
     align-items: center;
 }
 
 .modal-group input{
     background-color: #e2e2e2;
-    border: 1px solid grey;
+    border: 2px solid grey;
+    border-left: 0;
     padding: 16px 24px;
     font-size: 16px;
-    border-radius: 8px;
-    margin: 14px;
+    border-radius: 0px 8px 8px 0px ;
+    margin: 0;
 }
 
 .modal-group input:focus{
@@ -133,4 +134,43 @@ th {
     overflow: hidden;
     outline: none;
     text-decoration: none;
+}
+
+.name-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-icon .bi{
+    color: rgb(59, 59, 59);
+    font-size: 27px;
+    margin: 0;
+    margin-top: 11px;
+}
+
+.icon-background{
+    background-color: #e2e2e2;
+    height: 59.2px;
+    border: 2px solid grey;
+    border-right: 0;
+    text-align: center;
+    padding: 3px;
+}
+
+.form-group select{
+    width: 250.267px;
+    height: 59.2px;
+    border: 2px solid grey;
+    border-left: 0;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.form-group select:focus{
+    border-left: 0;
+    outline: 0;
+}
+
+.form-group.select-icon{
+    margin-right: 55px;
 }

@@ -12,18 +12,18 @@ import { v4 as uuidv4 } from 'uuid';
 // ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'
 //
 //**********************************************************************************
- 
 
- export = class Transaction {
 
-     public id: number
-     public name: string
-     public type: string
-     public value: number
-     public date: Date
-     public token: string
+export = class Transaction {
 
-     public constructor (id:number, name:string, type:string, value:number, date: Date, token: string){
+    public id: number
+    public name: string
+    public type: string
+    public value: number
+    public date: Date
+    public token: string
+
+    public constructor(id: number, name: string, type: string, value: number, date: Date, token: string) {
 
         this.id = id
         this.name = name
@@ -31,9 +31,9 @@ import { v4 as uuidv4 } from 'uuid';
         this.value = value
         this.date = date
         this.token = token
-     }
+    }
 
-     private static validate(transaction: Transaction): string {
+    private static validate(transaction: Transaction): string {
 
         if (transaction.name) {
             transaction.name = transaction.name.trim()
@@ -43,7 +43,7 @@ import { v4 as uuidv4 } from 'uuid';
             transaction.type = transaction.type.trim()
         }
 
-        if (!transaction.type || isNaN(transaction.value) || !transaction.name || !transaction.value){
+        if (!transaction.type || isNaN(transaction.value) || !transaction.name || !transaction.value) {
             return 'Faltam Dados'
         }
 
@@ -52,9 +52,9 @@ import { v4 as uuidv4 } from 'uuid';
         }
 
         return null
-     }
+    }
 
-     public static async create(transaction: Transaction): Promise<string> {
+    public static async create(transaction: Transaction): Promise<string> {
 
         let err: string = Transaction.validate(transaction)
 
@@ -79,9 +79,9 @@ import { v4 as uuidv4 } from 'uuid';
         })
 
         return err
-     }
+    }
 
-     public static async delete(id: number): Promise<string> {
+    public static async delete(id: number): Promise<string> {
 
         let err: string = null
 
@@ -96,20 +96,19 @@ import { v4 as uuidv4 } from 'uuid';
         })
 
         return err
-     }
+    }
 
-     public static async list(): Promise<Transaction[]> {
+    public static async list(): Promise<Transaction[]> {
 
-         let transactions: Transaction[] = null
+        let transactions: Transaction[] = null
 
-         await Sql.conectar(async (sql: Sql) => {
-             
+        await Sql.conectar(async (sql: Sql) => {
+
             transactions = await sql.query(`SELECT * FROM transactions`) as Transaction[]
 
-         })
+        })
 
-         return transactions
-     }
- }
+        return transactions
+    }
+}
 
- 

@@ -23,9 +23,9 @@ server.use(require('express-ejs-layouts'))
 
 server.use((req, res, next) => {
     res.header('Cache-Control', "private, no-cache, no-store, must-revalidate");
-	res.header("Expires", "-1");
-	res.header("Pragma", "no-cache");
-	next();
+    res.header("Expires", "-1");
+    res.header("Pragma", "no-cache");
+    next();
 })
 
 server.use('/', require('./routes/home'))
