@@ -1,5 +1,5 @@
-$(document).ready(function () {
-    $('#value').mask('000000000000000,00', { reverse: true });
+ $(document).ready(function () {
+    $('#value').mask('000000000000000.00', { reverse: true });
 })
 
 $('.modal').on('hidden.bs.modal', function () {

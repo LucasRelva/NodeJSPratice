@@ -20,10 +20,79 @@
 
     <%- include('scripts') %>
 
-    <%- defineContent('body-end') %>
+    <%- defineContent('body-end')%>
 
     <%- defineContent('modal-end') %>
-  
+
+    <script>
+
+        $("#form").validate({
+            rules: {
+                name: {
+                    required: false,
+                    maxlength: 50
+                },
+                type: {
+                    required: false,
+                    maxlength: 50
+                },
+                value: {
+                    required: false
+                }
+            },
+
+            submitHandler: function (form) {
+
+                if ($.active) return
+
+                let name = $("#name")
+                let type = $("#type")
+                let value = $("#value")
+
+                name = name.val()
+                type = type.val()
+                value = parseFloat(value.val())
+
+                var transaction = {
+                    name: name,
+                    type: type,
+                    value: value
+                }
+
+                $.ajax({
+
+                    url: "/api/conta/criar",
+                    method: "post",
+
+                    data: JSON.stringify(transaction),
+
+                    processData: false,
+
+                    contentType: "application/json",
+
+                    success: function (dadosDeRetorno) {
+
+                        form.reset()
+                        setTimeout(() => { window.location = "/" }, 1)
+                    },
+
+                    error: function (xhr) {
+
+                        try {
+
+                            alert(JSON.parse(xhr.responseText));
+
+                        } catch (err) {
+
+                            alert("Algo deu errado");
+                        }
+                    }
+                })
+            }
+        })
+
+    </script>
+
 </body>
 
 </html>
