@@ -32,21 +32,21 @@
     <div class="card border-danger mb-3 cards">
         <div class="card-header">Saída</div>
         <div class="card-body text-danger">
-            <h5 class="card-title">- R$1000,00</h5>
+            <h5 class="card-title" id="outcome-card">- R$1000,00</h5>
         </div>
     </div>
 
     <div class="card border-dark  mb-3 cards">
         <div class="card-header">Saldo atual</div>
         <div class="card-body">
-            <h5 class="card-title"> R$1000,00</h5>
+            <h5 class="card-title" id="balance-card"> R$1000,00</h5>
         </div>
     </div>
 
     <div class="card border-success  mb-3 cards">
         <div class="card-header">Entrada</div>
         <div class="card-body text-success">
-            <h5 class="card-title">+ R$1000,00</h5>
+            <h5 class="card-title" id="income-card">+ R$1000,00</h5>
         </div>
     </div>
 
@@ -78,18 +78,13 @@
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Tipo</th>
                     <th>Valor</th>
                     <th>Data</th>
                 </tr>
             </thead>
             <tbody class="" id="table-body">
                 <tr>
-                    <td>10</td>
-                    <td>Lucas</td>
-                    <td>saída</td>
-                    <td class="text-danger">- R$550,00</td>
-                    <td>12/03/2017</td>
+                    
                 </tr>
             </tbody>
 
@@ -107,3 +102,6 @@
     <%- contentFor('body-end') %>
 
     <script src="/js/mytransactions.js"></script>
+
+
+    
