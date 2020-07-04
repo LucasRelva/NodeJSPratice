@@ -61,22 +61,7 @@ th {
     margin-bottom: 10px;
 }
 
-.modal-body form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-group{
-    display: flex;
-    flex-direction: column;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-group input{
+.modal-body input{
     background-color: #e2e2e2;
     border: 2px solid grey;
     border-left: 0;
@@ -84,32 +69,31 @@ th {
     font-size: 16px;
     border-radius: 0px 8px 8px 0px ;
     margin: 0;
+    width: 80%;
+    height: 53.2px;
 }
 
-.modal-group input:focus{
+.modal-body input:focus{
     background-color: rgb(205, 237, 255);
     border: 2px solid rgb(115, 192, 255);
     cursor: pointer;
 }
 
-.modal-group input:hover{
-    cursor: pointer;
-}
-
-.form-group{
-    width: 50%;
-}
-
-.form-group select{
-    width: 100%;
+.modal-body select{
     background-color: #e2e2e2;
+    width: 80%;
+    height: 53.2px;
+    border: 2px solid grey; 
+    border-left: 0;
+    border-radius: 0px 8px 8px 0px;
+    outline: 0;
 }
 
-.form-group select:hover{
+.modal-body select:hover{
     cursor: pointer;
 }
 
-.form-group select:focus{
+.modal-body select:focus{
     background-color: #e2e2e2;
     border: 2px solid rgb(115, 192, 255);
     cursor: pointer;
@@ -120,6 +104,7 @@ th {
     outline: none;
     border: 0;
     overflow: hidden;
+    color: whitesmoke;
 }
 
 .close::-moz-focus-inner{
@@ -136,41 +121,49 @@ th {
     text-decoration: none;
 }
 
+.icon-input{
+    display: flex;
+}
+
 .name-icon{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+ 
+.select-icon .bi{
+    margin-top: 9px;
+}
 
-.name-icon .bi{
+.icon-input .bi{
     color: rgb(59, 59, 59);
     font-size: 27px;
-    margin: 0;
-    margin-top: 11px;
-}
+} 
 
 .icon-background{
     background-color: #e2e2e2;
-    height: 59.2px;
+    height: 53.2px;
     border: 2px solid grey;
     border-right: 0;
     text-align: center;
     padding: 3px;
 }
 
-.form-group select{
-    width: 250.267px;
-    height: 59.2px;
-    border: 2px solid grey;
-    border-left: 0;
-    border-radius: 0px 8px 8px 0px;
+.modal-value-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group select:focus{
-    border-left: 0;
-    outline: 0;
+
+.div-select{
+
+    text-align: left;
+    box-sizing: unset;
+    width: 100%;
 }
 
-.form-group.select-icon{
-    margin-right: 55px;
+.input-verify{
+    width: 100%;
 }
