@@ -13,10 +13,11 @@ th {
 
 .results {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    justify-content: space-evenly;
+    margin-top: 6vh;
     text-align: center;
     overflow: hidden;
+    margin-bottom: 8vh;
 }
 
 .cards {
