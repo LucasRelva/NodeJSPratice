@@ -169,3 +169,16 @@ th {
     width: 100%;
     margin-bottom: 19px;
 }
+
+label#name-error{
+    display: none !important;
+}
+
+label#value-error{
+    display: none !important;
+}
+
+label#type-error{
+    display: none !important;
+}
+

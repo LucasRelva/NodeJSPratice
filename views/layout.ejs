@@ -41,6 +41,8 @@
                 }
             },
 
+
+
             submitHandler: function (form) {
 
                 if ($.active) return
@@ -72,7 +74,6 @@
 
                     success: function (dadosDeRetorno) {
 
-                        form.reset()
                         setTimeout(() => { window.location = "/" }, 1)
                     },
 
@@ -90,7 +91,6 @@
                 })
             }
         })
-        
 
     </script>
 

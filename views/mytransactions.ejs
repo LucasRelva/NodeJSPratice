@@ -29,24 +29,24 @@
 
 <div class="results">
 
-    <div class="card border-danger mb-3 cards">
-        <div class="card-header">Saída</div>
-        <div class="card-body text-danger">
-            <h5 class="card-title" id="outcome-card">- R$1000,00</h5>
+    <div class="card border-success mb-3 cards">
+        <div class="card-header text-success">Entrada</div>
+        <div class="card-body ">
+            <h5 class="card-title" id="income-card"></h5>
+        </div>
+    </div>
+
+    <div class="card border-danger  mb-3 cards">
+        <div class="card-header text-danger">Saída</div>
+        <div class="card-body">
+            <h5 class="card-title" id="outcome-card"> </h5>
         </div>
     </div>
 
     <div class="card border-dark  mb-3 cards">
         <div class="card-header">Saldo atual</div>
         <div class="card-body">
-            <h5 class="card-title" id="balance-card"> R$1000,00</h5>
-        </div>
-    </div>
-
-    <div class="card border-success  mb-3 cards">
-        <div class="card-header">Entrada</div>
-        <div class="card-body text-success">
-            <h5 class="card-title" id="income-card">+ R$1000,00</h5>
+            <h5 class="card-title" id="balance-card"></h5>
         </div>
     </div>
 
@@ -80,18 +80,24 @@
                     <th>Nome</th>
                     <th>Valor</th>
                     <th>Data</th>
+                    <th><a href="#" onclick="update()"><svg width="1em" height="1em" viewBox="0 0 16 16"
+                                class="bi bi-arrow-repeat text-warning" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" style="font-size: 20px;">
+                                <path fill-rule="evenodd"
+                                    d="M2.854 7.146a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L2.5 8.207l1.646 1.647a.5.5 0 0 0 .708-.708l-2-2zm13-1a.5.5 0 0 0-.708 0L13.5 7.793l-1.646-1.647a.5.5 0 0 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0 0-.708z" />
+                                <path fill-rule="evenodd"
+                                    d="M8 3a4.995 4.995 0 0 0-4.192 2.273.5.5 0 0 1-.837-.546A6 6 0 0 1 14 8a.5.5 0 0 1-1.001 0 5 5 0 0 0-5-5zM2.5 7.5A.5.5 0 0 1 3 8a5 5 0 0 0 9.192 2.727.5.5 0 1 1 .837.546A6 6 0 0 1 2 8a.5.5 0 0 1 .501-.5z" />
+                            </svg></a></th>
                 </tr>
             </thead>
             <tbody class="" id="table-body">
-                <tr>
-                    
-                </tr>
+
             </tbody>
 
         </table>
     </div>
 
-    <%- include('modal') %> 
+    <%- include('modal') %>
 
     <%- contentFor('header-end') %>
 
@@ -102,6 +108,3 @@
     <%- contentFor('body-end') %>
 
     <script src="/js/mytransactions.js"></script>
-
-
-    

@@ -26,24 +26,25 @@
 
   [data-theme="dark"] .border-danger {
     background-color: #DC3545 !important;
+    color: #ffff;
   }
 
   [data-theme="dark"] .border-dark {
     background-color: #32383E !important;
   }
 
-  [data-theme="dark"] .card-title {
-    color: #ffff;
+  [data-theme="dark"] .card-header {
+    color: #ffff !important; 
   }
 
   [data-theme="dark"] .bi-moon {
-    display: none;
+    display: none !important;
   }
 
   [data-theme="dark"] .bi-sun {
-    display: inline;
+    display: inline !important;
   }
 
   [data-theme="dark"] .modal-content{
-    background-color: #32383E;
+    background-color: #32383E !important;
   }

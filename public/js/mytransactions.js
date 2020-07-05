@@ -8,9 +8,6 @@ $('.modal').on('hidden.bs.modal', function () {
 
 function update() {
 
-    if ($.active) {
-        return
-    }
 
     $.ajax({
 
@@ -36,16 +33,30 @@ function update() {
                     html += `<tr>
                                 <td>${randomnum}</td>
                                 <td>${trans.nome}</td>
-                                <td class="text-success">+ R$ ${trans.valor}</td>
+                                <td class="text-success">+ R$ ${(Math.round(trans.valor * 100) / 100).toFixed(2)}</td>
                                 <td>${trans.dia.slice(8, 10)}/${trans.dia.slice(5, 7)}/${trans.dia.slice(0, 4)}</td>
+                                <td><a href ='#' onclick='del(${trans.id})'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
+                                class="bi bi-trash text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style = 'font-size: 20px;'>
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 
+                                .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h
+                                2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg></a></td>
                     </tr>`
                 } else {
 
                     html += `<tr>
                                 <td>${randomnum}</td>
                                 <td>${trans.nome}</td>
-                                <td class="text-danger">- R$ ${trans.valor}</td>
+                                <td class="text-danger">- R$ ${(Math.round(trans.valor * 100) / 100).toFixed(2)}</td>
                                 <td>${trans.dia.slice(8, 10)}/${trans.dia.slice(5, 7)}/${trans.dia.slice(0, 4)}</td>
+                                <td><a href ='#' onclick='del(${trans.id})'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
+                                class="bi bi-trash text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style = 'font-size: 20px;'>
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 
+                                .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h
+                                2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                              </svg></a></td>
                     </tr>`
                 }
             }
@@ -80,9 +91,9 @@ function update() {
 
             minus *= -1
 
-            income.html(` + R$ ${sum}`)
-            outcome.html(`- R$ ${minus}`)
-            balance.html(`R$ ${total}`)
+            income.html(` + R$ ${(Math.round(sum * 100) / 100).toFixed(2)}`)
+            outcome.html(`- R$ ${(Math.round(minus * 100) / 100).toFixed(2)}`)
+            balance.html(`R$ ${(Math.round(total * 100) / 100).toFixed(2)}`)
 
         },
 
@@ -92,6 +103,29 @@ function update() {
         }
 
 
+    })
+
+}
+
+function del(id) {
+
+    if ($.active) return
+
+
+
+    if (!confirm('Tem certeza que deseja fazer isso?')) return
+
+    $.ajax({
+        url: '/api/conta/excluir/' + id,
+        method: "GET",
+
+        success:  (data) => {
+            update()
+        },
+
+        error:  () => {
+            alert('Algo deu errado!')
+        }
     })
 
 }
