@@ -182,3 +182,14 @@ label#type-error{
     display: none !important;
 }
 
+#table-body{
+    cursor: default;
+}
+
+#table-body .trash-icon{
+    cursor: pointer;
+}
+
+.table thead{
+    cursor: default;
+}

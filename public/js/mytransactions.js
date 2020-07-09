@@ -35,7 +35,7 @@ function update() {
                                 <td>${trans.nome}</td>
                                 <td class="text-success">+ R$ ${(Math.round(trans.valor * 100) / 100).toFixed(2)}</td>
                                 <td>${trans.dia.slice(8, 10)}/${trans.dia.slice(5, 7)}/${trans.dia.slice(0, 4)}</td>
-                                <td><a href ='#' onclick='del(${trans.id})'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
+                                <td><a href ='#' onclick='del(${trans.id})' class = 'trash-icon'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
                                 class="bi bi-trash text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style = 'font-size: 20px;'>
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 
                                 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -50,7 +50,7 @@ function update() {
                                 <td>${trans.nome}</td>
                                 <td class="text-danger">- R$ ${(Math.round(trans.valor * 100) / 100).toFixed(2)}</td>
                                 <td>${trans.dia.slice(8, 10)}/${trans.dia.slice(5, 7)}/${trans.dia.slice(0, 4)}</td>
-                                <td><a href ='#' onclick='del(${trans.id})'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
+                                <td><a href ='#' onclick='del(${trans.id})' class = 'trash-icon'> <svg width="1em" height="1em" viewBox="0 0 16 16" 
                                 class="bi bi-trash text-danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style = 'font-size: 20px;'>
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 
                                 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -119,7 +119,7 @@ function del(id) {
         url: '/api/conta/excluir/' + id,
         method: "GET",
 
-        success:  (data) => {
+        success:  data => {
             update()
         },
 
