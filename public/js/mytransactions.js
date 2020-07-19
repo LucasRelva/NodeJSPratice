@@ -1,3 +1,4 @@
+//formata o valor do 'value' para ter duas casas decimais
 $(document).ready(function () {
     $('#value').mask('000000000000000.00', { reverse: true });
 })
@@ -8,27 +9,27 @@ $('.modal').on('hidden.bs.modal', function () {
 
 function update() {
 
-
+    //começo da função para atualizar a lista no front-end    
     $.ajax({
-
+        // quando a função for executada irá buscar o método listar 
         url: '/api/conta/listar',
         method: 'get',
-
+        // vetor 'transactions' retornado pelo método listar salvo no parâmetro 'returndata'
         success: returndata => {
 
-            let table = $('#table-body')
+            let table = $('#table-body')//corpo da tabela salvo na var 'table'
 
-            let html = ''
+            let html = ''// cria var 'html' como uma string vazia
 
-            returndata.reverse()
+            returndata.reverse()// inverte o vetor para que as novas transações registradas apareçam no topo da tabela
 
             for (let i = 0; i < returndata.length; i++) {
-
+                //for para percorrer todos os objetos do vetor
                 let trans = returndata[i]
 
-                const randomnum = Math.floor(Math.random() * 65536)
+                const randomnum = Math.floor(Math.random() * 65536)// gera um número aleatório entre 0 e 65536
 
-                if (trans.tipo == 'Entrada') {
+                if (trans.tipo == 'Entrada') { // se a opção 'entrada' for selecionada pelo usuário a string 'html' recebe oq está abaixo
 
                     html += `<tr>
                                 <td>${randomnum}</td>
@@ -43,7 +44,7 @@ function update() {
                                 2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
                               </svg></a></td>
                     </tr>`
-                } else {
+                } else {//string html caso a escolha seja 'saída'
 
                     html += `<tr>
                                 <td>${randomnum}</td>
@@ -61,8 +62,9 @@ function update() {
                 }
             }
 
-            table.html(html)
+            table.html(html)// adiciona a string recebida acima a tabela
 
+            // exibindo os resultados gerais de saldo entrada e saída nos cards da homepage
             let income = $('#income-card')
             let outcome = $('#outcome-card')
             let balance = $('#balance-card')
@@ -106,21 +108,21 @@ function update() {
     })
 
 }
-
+// função deletar executada ao apertar o botão
 function del(id) {
-
+    //evitada q a função seja executada duas ou mais vezes caso ocorra double click
     if ($.active) return
 
 
-
+    //pop up de confirmação 
     if (!confirm('Tem certeza que deseja fazer isso?')) return
-
+    // executa a função excluir com o id da transação escolhida
     $.ajax({
         url: '/api/conta/excluir/' + id,
         method: "GET",
 
         success:  data => {
-            update()
+            update()//atualiza a tabela para remoção da transação excluída
         },
 
         error:  () => {
@@ -130,4 +132,4 @@ function del(id) {
 
 }
 
-update()
+update()// função update executada ao carregara a página

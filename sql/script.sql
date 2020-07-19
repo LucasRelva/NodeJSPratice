@@ -10,3 +10,5 @@ CREATE TABLE transactions (
     token varchar(100) NOT NULL,
     PRIMARY KEY (id)
 );
+
+/* modela de criação da tabela para o banco de dados */

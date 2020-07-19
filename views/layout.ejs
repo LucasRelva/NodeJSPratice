@@ -1,11 +1,14 @@
+<!-- o ejs sempre renderiza utiliza e renderiza o arquivo 'layout.ejs' como padrão para todas as páginas sendo elas diferenciadas 
+apenas pelos 'definecontents'
+ -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
 
-    <%- include('header') %>
+    <%- include('header') %> <!-- inclui o arquivo 'header.ejs' nessa parte da página -->
 
-    <%- defineContent('header-end') %>
+    <%- defineContent('header-end') %> <!-- Aqui entra tudo oq for definido pelo 'contentfor' do header end -->
 
     <link rel="stylesheet" href="/css/responsive.css">
 
@@ -18,14 +21,14 @@
 
     </div>
 
-    <%- include('scripts') %>
+    <%- include('scripts') %> <!-- inclui o arquivo 'scripts.ejs' nessa parte da página -->
 
-    <%- defineContent('body-end')%>
+    <%- defineContent('body-end')%> <!-- Aqui entra tudo oq for definido pelo 'contentfor' do body end -->
 
-    <%- defineContent('modal-end') %>
+    <%- defineContent('modal-end') %> <!-- Aqui entra tudo oq for definido pelo 'contentfor' do modal end -->
 
     <script>
-
+            //pequena função de validação para o formulário de id 'form' com algumas regras básicas
         $("#form").validate({
             rules: {
                 name: {
@@ -46,7 +49,7 @@
             submitHandler: function (form) {
 
                 if ($.active) return
-
+                //pega do formulário os dos campos representados pelos seus respectivos IDs
                 let name = $("#name")
                 let type = $("#type")
                 let value = $("#value")
@@ -54,7 +57,7 @@
                 name = name.val()
                 type = type.val()
                 value = parseFloat(value.val())
-
+                // salva os dados obtidos do form no objeto 'transaction'
                 var transaction = {
                     name: name,
                     type: type,
@@ -62,19 +65,19 @@
                 }
 
                 $.ajax({
-
+                    // posta o json do objeto 'transaction' na url /criar
                     url: "/api/conta/criar",
                     method: "post",
 
-                    data: JSON.stringify(transaction),
+                    data: JSON.stringify(transaction), //transforma o objeto em json
 
                     processData: false,
 
                     contentType: "application/json",
 
-                    success: function (dadosDeRetorno) {
+                    success: function (dadosDeRetorno) { //se obtivermos sucesso com os métodos a janela volta para a homepage
 
-                        setTimeout(() => { window.location = "/" }, 1)
+                        setTimeout(() => { window.location = "/" }, 1) 
                     },
 
                     error: function (xhr) {

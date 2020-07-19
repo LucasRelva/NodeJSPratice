@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 //**********************************************************************************
 
 
+//criando a classe de transações
 export = class Transaction {
 
     public id: number
@@ -33,6 +34,8 @@ export = class Transaction {
         this.token = token
     }
 
+    //modulo de validação, valida se todos os dados foram preenchidos
+    //private: esse método só pode ser acessado nessa classe
     private static validate(transaction: Transaction): string {
 
         if (transaction.name) {
@@ -50,25 +53,29 @@ export = class Transaction {
         if (transaction.name.length > 20) {
             return 'Nome muito longo'
         }
-
+        // não retorna nada caso esteja tudo correto
         return null
     }
 
+    //método de criação
     public static async create(transaction: Transaction): Promise<string> {
 
+        //passa pelo método de validação e salva o retorno na variável 'err'
         let err: string = Transaction.validate(transaction)
 
+        // caso o do método validate não for nulo esse if retornará o erro
         if (err) {
             return err
         }
 
+        //executa a função conectar com 'await w async' oq permitirá a execução de outras coisas enquanto o servidor espera a resposta desse método
         await Sql.conectar(async (sql: Sql) => {
 
             try {
                 transaction.id = await sql.scalar('SELECT last_insert_id()') as number
-
+                // criptográfa o ID do registro
                 transaction.token = uuidv4(transaction.id)
-
+                //adiciona os dados no banco de dados
                 await sql.query(`INSERT INTO transactions (nome, tipo, valor, dia, token) 
                                 VALUES (?, ?, ?, CURDATE() , ?)`, [transaction.name, transaction.type, transaction.value, transaction.token])
 
@@ -77,16 +84,16 @@ export = class Transaction {
             }
 
         })
-
+        // se tudo estiver dentro dos requisitos esse retorno será nulo
         return err
     }
-
+    // método deletar
     public static async delete(id: number): Promise<string> {
 
         let err: string = null
 
         await Sql.conectar(async (sql: Sql) => {
-
+            // exclui do banco de dados a transaction de id escolhido
             await sql.query('DELETE FROM transactions WHERE id = ?', [id])
 
             if (!sql.linhasAfetadas) {
@@ -97,13 +104,13 @@ export = class Transaction {
 
         return err
     }
-
+    // função listar 
     public static async list(): Promise<Transaction[]> {
 
         let transactions: Transaction[] = null
 
         await Sql.conectar(async (sql: Sql) => {
-
+            //seliciona tudo do banco de dados e salva no vetor transactions
             transactions = await sql.query(`SELECT * FROM transactions`) as Transaction[]
 
         })
