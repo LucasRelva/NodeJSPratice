@@ -7,3 +7,4 @@ sqlPool.js
 appsettings.js
 *.js.map
 views/mytransactions.html
+sql/script.sql

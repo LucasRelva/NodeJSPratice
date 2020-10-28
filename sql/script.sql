@@ -9,6 +9,12 @@ CREATE TABLE transactions (
     dia DATE NOT NULL,
     token varchar(100) NOT NULL,
     PRIMARY KEY (id)
+    /*REFERENCES nome (usuario)*/
 );
 
+/*CREATE TABLE   usuario (
+    nome varchar(50),
+    CONSTRAINT nome PRIMARY KEY (nome)
+
+)
 /* modela de criação da tabela para o banco de dados */
