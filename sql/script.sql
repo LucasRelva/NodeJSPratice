@@ -8,13 +8,5 @@ CREATE TABLE transactions (
     valor float NOT NULL,
     dia DATE NOT NULL,
     token varchar(100) NOT NULL,
-    PRIMARY KEY (id)
-    /*REFERENCES nome (usuario)*/
+    PRIMARY KEY (id)  
 );
-
-/*CREATE TABLE   usuario (
-    nome varchar(50),
-    CONSTRAINT nome PRIMARY KEY (nome)
-
-)
-/* modela de criação da tabela para o banco de dados */
